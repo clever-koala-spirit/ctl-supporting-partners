@@ -7,11 +7,11 @@
   <meta name="description" content="Close the Loop operates manufacturer-funded product stewardship programs in partnership with leading global brands across Australia, New Zealand and internationally.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" href="https://cdn.prod.website-files.com/6875eb4c2b24785fe1ce819a/68767e20eb6f38f2d2e56a98_Favicon_CLG.png" type="image/png">
   <style>
     /* ============================================
-       CTL DESIGN SYSTEM — Extracted from closetheloop.com.au
+       CTL DESIGN SYSTEM — Matched to closetheloop.com.au
        ============================================ */
     :root {
       --ctlBlack: #131110;
@@ -19,6 +19,7 @@
       --ctlCharcoal: #30302E;
       --ctlGrey: #333333;
       --ctlLightGrey: #F5F5F5;
+      --ctlHeaderBg: #D6D5D3;
       --ctlBorderGrey: #D6D5D3;
       --ctlOffWhite: #FAF9F5;
       --ctlWhite: #FFFFFF;
@@ -74,95 +75,164 @@
     p:last-child { margin-bottom: 0; }
 
     /* ============================================
-       HEADER / NAV — Matches CTL
+       HEADER — Exact CTL Match
        ============================================ */
+    /* Top announcement bar */
+    .top-bar {
+      background: var(--ctlHeaderBg);
+      padding: 10px 0;
+    }
+    .top-bar-inner {
+      max-width: var(--containerMax);
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+    .top-bar-text {
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ctlBlack);
+    }
+    .top-bar-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ctlLime);
+      color: var(--ctlBlack);
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+    .top-bar-phone:hover { text-decoration: none; opacity: 0.9; }
+    .top-bar-phone svg { width: 16px; height: 16px; fill: var(--ctlBlack); }
+
+    /* Main header */
     .site-header {
       background: var(--ctlWhite);
-      padding: 20px 0;
+      padding: 24px 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     .header-inner {
       max-width: var(--containerMax);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .site-logo img { height: 48px; width: auto; }
-    .header-nav { display: flex; align-items: center; gap: 32px; }
-    .header-nav a {
+    .site-logo img { height: 64px; width: auto; }
+    .header-nav { display: flex; align-items: center; gap: 36px; }
+    .header-nav a.nav-link {
       font-family: var(--font);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--ctlBlack);
       text-decoration: none;
       transition: color 0.2s;
-    }
-    .header-nav a:hover { color: var(--ctlGrey); text-decoration: none; }
-    .header-nav .nav-cta {
-      background: var(--ctlLime);
-      color: var(--ctlBlack);
-      padding: 10px 20px;
-      border-radius: 0;
-      font-weight: 700;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-    .header-nav .nav-cta:hover { opacity: 0.9; }
-
-    /* Mobile nav toggle */
-    .nav-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ctlBlack); }
-
-    /* ============================================
-       CTA BUTTON — CTL arrow style
-       ============================================ */
-    .btn-with-arrow {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 6px;
+    }
+    .header-nav a.nav-link:hover { color: var(--ctlGrey); text-decoration: none; }
+    .header-nav a.nav-link svg { width: 10px; height: 10px; fill: none; stroke: var(--ctlBlack); stroke-width: 2.5; }
+
+    /* Portal Login — black pill (exact CTL match) */
+    .nav-cta {
+      background: var(--ctlBlack);
+      color: var(--ctlWhite) !important;
+      padding: 10px 18px;
+      border-radius: 100px;
       font-family: var(--font);
+      font-weight: 700;
       font-size: 17px;
-      font-weight: 700;
-      color: var(--ctlBlack);
-      text-decoration: none;
-      transition: gap 0.3s ease;
-    }
-    .btn-with-arrow:hover { gap: 18px; text-decoration: none; }
-    .btn-with-arrow__icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: contain;
-    }
-    .btn-with-arrow--white { color: var(--ctlWhite); }
-    .btn-with-arrow--lime { color: var(--ctlLime); }
-
-    .btn-solid {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font);
-      font-size: 15px;
-      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      padding: 16px 32px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
+      text-decoration: none !important;
       transition: opacity 0.2s;
+      display: inline-block;
     }
-    .btn-solid:hover { opacity: 0.9; text-decoration: none; }
-    .btn-solid--lime { background: var(--ctlLime); color: var(--ctlBlack); }
-    .btn-solid--teal { background: var(--ctlTeal); color: var(--ctlBlack); }
-    .btn-solid--dark { background: var(--ctlCharcoal); color: var(--ctlWhite); }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+      padding: 8px;
+    }
+    .nav-toggle span { display: block; width: 28px; height: 2.5px; background: var(--ctlBlack); border-radius: 2px; }
+
+    /* ============================================
+       CTL BUTTONS — rounded rect with circle arrow (exact match)
+       ============================================ */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font);
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 10px 12px 10px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--ctlBlack);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+      line-height: 1.3;
+    }
+    .btn-pill .btn-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .btn-pill:hover .btn-arrow { transform: translateX(4px); }
+    .btn-pill .btn-arrow svg { width: 14px; height: 14px; }
+
+    /* Lime variant */
+    .btn-pill--lime {
+      background: var(--ctlLime);
+      color: var(--ctlBlack);
+      border-color: var(--ctlBlack);
+    }
+    .btn-pill--lime .btn-arrow { background: var(--ctlBlack); }
+    .btn-pill--lime .btn-arrow svg { stroke: var(--ctlWhite); fill: none; stroke-width: 2.5; }
+
+    /* Dark variant */
+    .btn-pill--dark {
+      background: var(--ctlBlack);
+      color: var(--ctlWhite);
+      border-color: var(--ctlBlack);
+    }
+    .btn-pill--dark .btn-arrow { background: var(--ctlWhite); }
+    .btn-pill--dark .btn-arrow svg { stroke: var(--ctlBlack); fill: none; stroke-width: 2.5; }
+
+    /* Outline variant */
+    .btn-pill--outline {
+      background: transparent;
+      color: var(--ctlBlack);
+      border-color: var(--ctlBlack);
+    }
+    .btn-pill--outline .btn-arrow { background: var(--ctlBlack); }
+    .btn-pill--outline .btn-arrow svg { stroke: var(--ctlWhite); fill: none; stroke-width: 2.5; }
 
     /* ============================================
        HERO SECTION
@@ -280,7 +350,7 @@
     .logo-grid-label {
       font-size: 14px;
       font-weight: 700;
-      text-transform: uppercase;
+  text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--ctlTextMuted);
       margin-bottom: 20px;
@@ -410,28 +480,26 @@
     .footer-cta p { color: var(--ctlBlack); max-width: 640px; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
 
     /* ============================================
-       SITE FOOTER — Matches CTL
+       SITE FOOTER — Exact CTL Match
        ============================================ */
     .site-footer {
       background: var(--ctlDarkBg);
       color: var(--ctlWhite);
-      padding: 70px 60px 40px;
+      padding: 80px 60px 40px;
     }
-    .footer-grid {
+    .footer-top {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 48px;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
     }
-    .footer-brand .footer-logo { height: 40px; width: auto; margin-bottom: 20px; filter: invert(1); }
+    .footer-brand .footer-logo { height: 64px; width: auto; margin-bottom: 24px; filter: brightness(0) invert(1); }
     .footer-brand p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; }
     .footer-col h4 {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
       color: var(--ctlWhite);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
     .footer-col ul li { margin-bottom: 10px; }
     .footer-col ul li a {
@@ -442,29 +510,106 @@
     }
     .footer-col ul li a:hover { color: var(--ctlWhite); }
 
+    /* Footer middle row */
+    .footer-mid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+    .footer-mid .footer-col-empty { }
+
+    /* Standalone footer links */
+    .footer-standalone-links {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 0;
+    }
+    .footer-standalone-links a {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ctlWhite);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-standalone-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* Newsletter */
+    .footer-newsletter {
+      margin-top: 0;
+    }
+    .footer-newsletter p {
+      color: var(--ctlWhite);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+    }
+    .newsletter-form input {
+      font-family: var(--font);
+      font-size: 14px;
+      padding: 14px 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-right: none;
+      border-radius: 50px 0 0 50px;
+      background: transparent;
+      color: var(--ctlWhite);
+      outline: none;
+      width: 240px;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .newsletter-form input:focus { border-color: var(--ctlLime); }
+    .newsletter-form button {
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 24px;
+      border: 2px solid var(--ctlLime);
+      border-radius: 0 50px 50px 0;
+      background: var(--ctlLime);
+      color: var(--ctlBlack);
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .newsletter-form button:hover { opacity: 0.9; }
+
+    /* Footer bottom */
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 32px;
+      margin-top: 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .footer-bottom span { font-size: 13px; color: rgba(255,255,255,0.4); }
     .footer-social { display: flex; gap: 16px; }
     .footer-social a {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .footer-social a:hover { background: rgba(255,255,255,0.15); }
+    .footer-social a:hover { border-color: var(--ctlWhite); background: rgba(255,255,255,0.08); }
     .footer-social a svg { width: 16px; height: 16px; fill: var(--ctlWhite); }
+    .footer-bottom-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .footer-bottom-right span { font-size: 13px; color: rgba(255,255,255,0.5); }
     .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
     .footer-links a:hover { color: var(--ctlWhite); }
 
     /* ============================================
@@ -488,9 +633,13 @@
       .cost-grid { grid-template-columns: repeat(3, 1fr); }
       .logo-grid { grid-template-columns: repeat(4, 1fr); }
       .ideal-grid { grid-template-columns: repeat(3, 1fr); }
-      .footer-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .footer-mid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
       .header-nav { display: none; }
       .nav-toggle { display: flex; }
+      .header-inner { padding: 0 20px; }
+      .top-bar-inner { padding: 0 20px; }
+      .site-footer { padding: 60px 20px 30px; }
     }
     @media (max-width: 767px) {
       .section-padding { padding: 60px 20px; }
@@ -503,34 +652,64 @@
       .ideal-grid { grid-template-columns: 1fr; }
       .brand-row { flex-direction: column; align-items: flex-start; gap: 8px; }
       .starter-kit { padding: 28px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-      .site-footer { padding: 50px 20px 30px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-mid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+      .footer-bottom-right { flex-direction: column; gap: 16px; }
+      .footer-standalone-links { flex-direction: column; gap: 16px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-radius: 50px; border-right: 2px solid rgba(255,255,255,0.3); width: 100%; }
+      .newsletter-form button { border-radius: 50px; }
     }
     @media (max-width: 479px) {
       .logo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .logo-item { padding: 20px 12px; min-height: 72px; }
-      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Mobile nav show state */
+    @media (max-width: 991px) {
+      .header-nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--ctlHeaderBg);
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        z-index: 99;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- ============================================
-       HEADER — CTL Navigation
+       TOP BAR — CTL Announcement Strip
+       ============================================ -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <span class="top-bar-text">Circular Solutions</span>
+      <a href="tel:1800242473" class="top-bar-phone">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        1800 24 2473
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       HEADER — CTL Navigation (exact match)
        ============================================ -->
   <header class="site-header">
     <div class="header-inner">
       <a href="https://closetheloop.com.au" class="site-logo">
-        <img src="https://cdn.prod.website-files.com/6875eb4c2b24785fe1ce819a/687e50e597b2a962c13c2b5e_Logo%20SmokeyBlack%20Without%20Clearance%20Space%20RGB%201.svg" alt="Close the Loop Group" height="48">
+        <img src="https://cdn.prod.website-files.com/6875eb4c2b24785fe1ce819a/687e50e597b2a962c13c2b5e_Logo%20SmokeyBlack%20Without%20Clearance%20Space%20RGB%201.svg" alt="Close the Loop Group" height="64">
       </a>
       <nav class="header-nav">
-        <a href="https://closetheloop.com.au/packaging">Packaging</a>
-        <a href="https://closetheloop.com.au/circular-solutions">Circular Solutions</a>
-        <a href="https://closetheloop.com.au/it-refurb">IT Refurb</a>
-        <a href="https://closetheloop.com.au/investor-center">Investor Centre</a>
-        <a href="https://closetheloop.com.au/about">About</a>
-        <a href="https://closetheloop.com.au/contact">Contact</a>
+        <a href="https://closetheloop.com.au/packaging" class="nav-link">Packaging <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></a>
+        <a href="https://closetheloop.com.au/circular-solutions" class="nav-link">Circular Solutions <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></a>
+        <a href="https://closetheloop.com.au/investor-center" class="nav-link">Investor Centre <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></a>
         <a href="https://members.closetheloop.com.au/" class="nav-cta">Portal Login</a>
       </nav>
       <div class="nav-toggle" onclick="document.querySelector('.header-nav').classList.toggle('show')">
@@ -569,7 +748,7 @@
     <div class="w-container">
       <h2>How supporting partners make the program free</h2>
       <hr class="section-divider">
-      <p>Close the Loop’s recycling programs are made possible by a group of supporting brands who voluntarily fund product stewardship on behalf of their customers.</p>
+      <p>Close the Loop's recycling programs are made possible by a group of supporting brands who voluntarily fund product stewardship on behalf of their customers.</p>
       <p>These partners cover the real costs of:</p>
 
       <div class="cost-grid">
@@ -705,7 +884,7 @@
         <div class="logo-item"><span>Avery Dennison</span></div>
       </div>
 
-      <a href="https://members.closetheloop.com.au/" class="btn-solid btn-solid--lime">Register for a Free Collection Box</a>
+      <a href="https://members.closetheloop.com.au/" class="btn-pill btn-pill--lime">Register for a Free Collection Box <span class="btn-arrow"><svg viewBox="0 0 16 16" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
     </div>
   </section>
 
@@ -743,7 +922,7 @@
         </div>
         <div class="brand-row">
           <div>
-            <div class="brand-name">L’Occitane</div>
+            <div class="brand-name">L'Occitane</div>
           </div>
           <a href="#">Find a store</a>
         </div>
@@ -753,7 +932,7 @@
       <div class="logo-grid">
         <div class="logo-item"><span>Estée Lauder</span></div>
         <div class="logo-item"><span>MAC</span></div>
-        <div class="logo-item"><span>L’Occitane</span></div>
+        <div class="logo-item"><span>L'Occitane</span></div>
       </div>
     </div>
   </section>
@@ -764,21 +943,20 @@
   <section class="footer-cta">
     <div class="w-container">
       <h2>Not sure if your brand is supported?</h2>
-      <p>If you’re unsure whether your cartridges or packaging are supported, the easiest place to start is to check the brand — or contact the Close the Loop team for guidance.</p>
-      <a href="https://closetheloop.com.au/contact" class="btn-solid btn-solid--dark">Contact Close the Loop</a>
+      <p>If you're unsure whether your cartridges or packaging are supported, the easiest place to start is to check the brand — or contact the Close the Loop team for guidance.</p>
+      <a href="https://closetheloop.com.au/contact" class="btn-pill btn-pill--dark">Contact Close the Loop <span class="btn-arrow"><svg viewBox="0 0 16 16" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
     </div>
   </section>
 
   <!-- ============================================
-       SITE FOOTER — Matches CTL
+       SITE FOOTER — Exact CTL Match
        ============================================ -->
   <footer class="site-footer">
     <div class="w-container">
-      <div class="footer-grid">
+      <!-- Row 1: Logo + 3 columns -->
+      <div class="footer-top">
         <div class="footer-brand">
           <img src="https://cdn.prod.website-files.com/6875eb4c2b24785fe1ce819a/687e50e597b2a962c13c2b5e_Logo%20SmokeyBlack%20Without%20Clearance%20Space%20RGB%201.svg" alt="Close the Loop Group" class="footer-logo">
-          <p>Leading the circular economy revolution with innovative recycling solutions and sustainable packaging.</p>
-          <p style="margin-top: 16px;">43-47 Cleeland Road<br>Oakleigh South, Victoria 3167<br>Australia</p>
         </div>
         <div class="footer-col">
           <h4>Products & Services</h4>
@@ -794,60 +972,72 @@
             <li><a href="https://closetheloop.com.au/investor-center/annual-reports">Annual Reports</a></li>
             <li><a href="https://closetheloop.com.au/investor-center/asx-announcements">ASX Announcements</a></li>
             <li><a href="https://closetheloop.com.au/investor-center/corporate-governance">Corporate Governance</a></li>
+            <li><a href="https://closetheloop.com.au/investor-center">Shareholder Services</a></li>
+            <li><a href="https://closetheloop.com.au/investor-center">Corporate Presentations</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4>Sustainability</h4>
           <ul>
-            <li><a href="https://closetheloop.com.au/about">About</a></li>
-            <li><a href="https://closetheloop.com.au/about/our-story">Our Story</a></li>
-            <li><a href="https://closetheloop.com.au/sustainability">Sustainability</a></li>
-            <li><a href="https://closetheloop.com.au/careers">Careers</a></li>
-            <li><a href="https://closetheloop.com.au/news-media">News & Media</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="https://closetheloop.com.au/contact-pages/australia">Australia</a></li>
-            <li><a href="https://closetheloop.com.au/contact-pages/americas">Americas</a></li>
-            <li><a href="https://closetheloop.com.au/contact-pages/emeas">EMEAS</a></li>
+            <li><a href="https://closetheloop.com.au/sustainability">Corporate Social Responsibility</a></li>
+            <li><a href="https://closetheloop.com.au/circular-solutions">Circular Contract</a></li>
           </ul>
         </div>
       </div>
+
+      <!-- Row 2: Empty + About + Contact + Standalone links + Newsletter -->
+      <div class="footer-mid">
+        <div class="footer-col-empty"></div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="https://closetheloop.com.au/about/our-story">Our Story</a></li>
+            <li><a href="https://closetheloop.com.au/about">Leadership</a></li>
+            <li><a href="https://closetheloop.com.au/about">Awards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="https://closetheloop.com.au/contact-pages/australia">Australia</a></li>
+            <li><a href="https://closetheloop.com.au/contact-pages/americas">America</a></li>
+            <li><a href="https://closetheloop.com.au/contact-pages/emeas">EMEAS</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-standalone-links" style="flex-direction: column; gap: 16px; margin-bottom: 36px;">
+            <a href="https://closetheloop.com.au/careers" style="font-size: 15px; font-weight: 700; color: #fff; text-decoration: none;">Careers</a>
+            <a href="https://closetheloop.com.au/news-media" style="font-size: 15px; font-weight: 700; color: #fff; text-decoration: none;">News and Media</a>
+            <a href="https://closetheloop.com.au/legal" style="font-size: 15px; font-weight: 700; color: #fff; text-decoration: none;">Legal</a>
+          </div>
+          <div class="footer-newsletter">
+            <p>Sign up for our newsletter</p>
+            <form class="newsletter-form" onsubmit="return false;">
+              <input type="email" placeholder="Enter your email">
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
       <div class="footer-bottom">
-        <span>&copy; 2025 Close the Loop Group. All rights reserved.</span>
         <div class="footer-social">
           <a href="https://www.facebook.com/closetheloopglobal" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
           <a href="https://www.instagram.com/closetheloopglobal/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
           <a href="https://au.linkedin.com/company/close-the-loop-au" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://www.youtube.com/@ClosetheLoopGroup" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
-        <div class="footer-links">
-          <a href="https://closetheloop.com.au/legal#privacy-policy">Privacy Policy</a>
-          <a href="https://closetheloop.com.au/terms-of-service">Terms of Service</a>
+        <div class="footer-bottom-right">
+          <span>&copy; 2025 Close the Loop Group. All rights reserved.</span>
+          <div class="footer-links">
+            <a href="https://closetheloop.com.au/legal#privacy-policy">Privacy Policy</a>
+            <a href="https://closetheloop.com.au/terms-of-service">Terms of Service</a>
+          </div>
         </div>
       </div>
     </div>
   </footer>
-
-  <style>
-    /* Mobile nav show state */
-    @media (max-width: 991px) {
-      .header-nav.show {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--ctlWhite);
-        padding: 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        z-index: 99;
-      }
-    }
-  </style>
 
 </body>
 </html>
